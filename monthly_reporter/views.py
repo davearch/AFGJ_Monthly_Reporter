@@ -120,13 +120,3 @@ class DirectoryFrame(tk.Frame):
         if not should_continue:
             print("exiting...")
             exit()
-
-class MyApplication(tk.Tk):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.title("AFGJ Monthly Report Mover")
-        self.geometry("400x200")
-        self.resizable(width=False, height=False)
-
-        self.main_frame = DirectoryFrame(self).grid(sticky=(tk.E + tk.W + tk.N + tk.S))
-        self.columnconfigure(0, weight=1)

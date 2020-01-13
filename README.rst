@@ -30,7 +30,7 @@ Usage
 
 To start the application, run::
 
-  python3 ABQ_Data_Entry/abq_data_entry.py
+  python3 AFGJ_Monthly_Reporter/monthly_reporter.py
 
 
 General Notes
