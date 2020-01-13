@@ -8,7 +8,8 @@ from tkinter import messagebox
 import os
 import getpass
 from fuzzywuzzy import process # type: ignore
-import utility_functions as uf
+
+from . import utility_functions as uf
 
 class DirectoryFrame(tk.Frame):
     def __init__(self, parent, *args, **kwargs) -> None:

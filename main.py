@@ -9,7 +9,7 @@ from tkinter import filedialog, messagebox
 import mypy
 from typing import List, Dict
 
-from utility_functions import (
+from monthly_reporter.utility_functions import (
     move_file,
     get_current_month_and_year,
     match_names_with_files,
@@ -24,7 +24,7 @@ from utility_functions import (
 )
 
 # GUI
-from afgj_gui import MyApplication
+from monthly_reporter.afgj_gui import MyApplication
 
 def main() -> None:
     app = MyApplication()
