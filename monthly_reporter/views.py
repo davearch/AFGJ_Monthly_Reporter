@@ -110,9 +110,15 @@ class DirectoryFrame(tk.Frame):
                 if not dirs:
                     dict_of_subfolders[dropbox_folder_name] = root
             monthly_report_subfolder = process.extractOne(self.monthly_report_string, dict_of_subfolders.keys())
-            final_filename = uf.cut_profitandloss_part( uf.cut_xls_extension( reports_dictionary[project] )) + "-" + uf.get_current_month_and_year() + ".xls"
+            final_filename = uf.get_final_filename(reports_dictionary[project]) # returns filename without extra fluff and xls extension
+            original_file = os.path.join(self.downloads_directory,  reports_dictionary[project]).replace("/", "\\")
+            original_file = uf.convert_xls_to_xlsx(original_file)
+            if not original_file:
+                print("error ocurred")
+                exit()
             final_path = dict_of_subfolders[monthly_report_subfolder[0]] + '\\' + final_filename
-            final[final_filename] = final_path
+            final[original_file] = final_path
+            print(f"{original_file}, {final[original_file]}")
         title = "Confirm Continue"
         message = "The following files will be created. Are you sure you want to continue?"
         detail = "* {}".format('\n * '.join(final.values()))

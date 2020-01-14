@@ -1,10 +1,30 @@
 import os
 import shutil
 import datetime
+import win32com.client as win32
 
 # typing
 import mypy
 from typing import List, Dict
+
+def convert_xls_to_xlsx(xls_file_full_path):
+    try:
+        excel = win32.gencache.EnsureDispatch('Excel.Application')
+        wb = excel.Workbooks.Open(xls_file_full_path)
+        wb.SaveAs(xls_file_full_path + "x", FileFormat = 51)    #FileFormat = 51 is for .xlsx extension
+        wb.Close()                                              #FileFormat = 56 is for .xls extension
+        excel.Application.Quit()
+        return xls_file_full_path + "x"
+    except Exception as e:
+        print(e)
+    finally:
+        # releases resources
+        wb = None
+        excel = None
+
+def get_final_filename(report):
+    final_filename = cut_profitandloss_part( cut_xls_extension( report )) + "-" + get_current_month_and_year() + ".xlsx"
+    return final_filename
 
 def move_file(original_file, final_path):
     # assert original_file is legit
