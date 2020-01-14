@@ -3,6 +3,7 @@ David Archuleta Jr.
 """
 import tkinter as tk
 from tkinter import ttk
+import tkinter.filedialog
 from tkinter import messagebox
 
 import os
@@ -114,9 +115,15 @@ class DirectoryFrame(tk.Frame):
             final[final_filename] = final_path
         title = "Confirm Continue"
         message = "The following files will be created. Are you sure you want to continue?"
-        detail = "* {}".format('\n * '.join(final.keys()))
+        detail = "* {}".format('\n * '.join(final.values()))
         should_continue = messagebox.askyesno(title=title, message=message, detail=detail)
         print("success")
         if not should_continue:
             print("exiting...")
             exit()
+        else:
+            for report, path in final.items():
+                successful = uf.move_file(report, path)
+                if not successful:
+                    messagebox.showerror(title="File Move Error", message=f"Error on {path}", detail="Please contact david.")
+        exit()

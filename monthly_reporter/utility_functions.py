@@ -12,12 +12,7 @@ def move_file(original_file, final_path):
     assert(os.access(os.path.dirname(final_path), os.W_OK))
     # shutil.move returns the written path if successful
     newPath = shutil.move(original_file, final_path)
-    try:
-        #print to gui label
-        pass
-    except:
-        pass # display error
-
+    return newPath
 
 def get_current_month_and_year():
     """
