@@ -37,4 +37,13 @@ General Notes
 =============
 
 This program is based on our workflow of having excel sheets emailed to us monthly.
-TODO: improve this program to automatically download the correct files from QuickBooks.
+
+
+TODOS
+=============
+* improve this program to automatically download the correct files from QuickBooks.
+* implement logging system instead of printing things to stdout
+* fix excel memory leaks
+* implement more excel work to highlight final balance
+* implement more excel work to append latest month to single workbook, if applicable
+* fix monthly report folder mistakes, sometimes the program doesn't correctly identify the correct folder
