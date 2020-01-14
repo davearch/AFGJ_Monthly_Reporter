@@ -47,3 +47,4 @@ TODOS
 * implement more excel work to highlight final balance
 * implement more excel work to append latest month to single workbook, if applicable
 * fix monthly report folder mistakes, sometimes the program doesn't correctly identify the correct folder
+* build program to exe file with pyinstaller
