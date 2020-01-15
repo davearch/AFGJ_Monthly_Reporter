@@ -42,7 +42,7 @@ def get_current_month_and_year():
     last_month = now.month-1 if now.month > 1 else 12
     year = now.year - 1 if last_month is 12 else now.year
     month = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()[last_month-1]
-    return f"{month}-{year}"
+    return "{}-{}".format(month, year)
 
 def match_names_with_files(clean_names: List[str], excel_sheets: List[str]) -> Dict:
     """
