@@ -118,7 +118,7 @@ class DirectoryFrame(tk.Frame):
                 exit()
             final_path = dict_of_subfolders[monthly_report_subfolder[0]] + '\\' + final_filename
             final[original_file] = final_path
-            print(f"{original_file}, {final[original_file]}")
+            print("{}, {}".format(original_file, final[original_file]))
         title = "Confirm Continue"
         message = "The following files will be created. Are you sure you want to continue?"
         detail = "* {}".format('\n * '.join(final.values()))
