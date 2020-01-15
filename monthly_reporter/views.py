@@ -131,5 +131,5 @@ class DirectoryFrame(tk.Frame):
             for report, path in final.items():
                 successful = uf.move_file(report, path)
                 if not successful:
-                    messagebox.showerror(title="File Move Error", message=f"Error on {path}", detail="Please contact david.")
+                    messagebox.showerror(title="File Move Error", message="Error on {}".format(path), detail="Please contact david.")
         exit()
