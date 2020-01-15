@@ -49,3 +49,5 @@ TODOS
 * fix monthly report folder mistakes, sometimes the program doesn't correctly identify the correct folder
 * build program to exe file with pyinstaller
 * optimize (too slow now after the excel stuff)
+* check if excel file already exists before saving new one
+* clean up files after exiting
