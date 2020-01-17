@@ -4,7 +4,6 @@ import datetime
 import win32com.client as win32
 
 # typing
-import mypy
 from typing import List, Dict
 
 def convert_xls_to_xlsx(xls_file_full_path):
