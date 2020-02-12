@@ -22,7 +22,8 @@ def convert_xls_to_xlsx(xls_file_full_path):
         excel = None
 
 def get_final_filename(report):
-    final_filename = cut_profitandloss_part( cut_xls_extension( report )) + "-" + get_current_month_and_year() + ".xlsx"
+    #final_filename = cut_profitandloss_part( cut_xls_extension( report )) + "-" + get_current_month_and_year() + ".xlsx"
+    final_filename = cut_profitandloss_part( get_current_month_and_year() + "-" + cut_xls_extension( report )) +  ".xlsx"
     return final_filename
 
 def move_file(original_file, final_path):
